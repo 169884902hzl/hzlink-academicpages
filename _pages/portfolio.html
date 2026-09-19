@@ -7,7 +7,9 @@ author_profile: true
 
 {% include base_path %}
 
+<p>Research on reliable robotic manipulation, from active observation to action verification and physical interaction.</p>
 
-{% for post in site.portfolio %}
+{% assign ordered_projects = site.portfolio | sort: 'order' %}
+{% for post in ordered_projects %}
   {% include archive-single.html %}
 {% endfor %}

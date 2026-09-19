@@ -12,7 +12,7 @@ site_theme               : "default" # The available themes options are "default
 title: Zhilun Hu
 title_separator          : "-"
 name: Zhilun Hu
-description: Academic website preview. Research outputs will be added by the site owner.
+description: Zhilun Hu is a Ph.D. student at Huazhong University of Science and Technology working on reliable robotic manipulation.
 url: https://169884902hzl.github.io
 baseurl: /hzlink-academicpages
 repository: 169884902hzl/hzlink-academicpages
@@ -22,11 +22,11 @@ repository: 169884902hzl/hzlink-academicpages
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   avatar: profile-placeholder.svg
-  name: Zhilun Hu
+  name: Zhilun Hu / 胡至伦
   pronouns: null
-  bio: Academic profile · placeholder preview
+  bio: Ph.D. student · Reliable robotic manipulation
   location: null
-  employer: null
+  employer: Huazhong University of Science and Technology
   uri: null
   email: null
   academia: null
@@ -75,12 +75,10 @@ author:
 
 # Publication Category - The following the list of publication categories and their headings
 publication_category:
-  books:
-    title: 'Books'
-  manuscripts:
-    title: 'Journal Articles'    
   conferences:
     title: 'Conference Papers'
+  manuscripts:
+    title: 'Manuscripts under Review'
 
 # Site Settings
 teaser                   :  # filename of teaser fallback teaser image placed in /images/ for social media previews

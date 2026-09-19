@@ -5,22 +5,22 @@ permalink: /cv/
 author_profile: true
 ---
 
-This CV contains placeholders only. Add your verified information before sharing it as a résumé.
+## Zhilun Hu / 胡至伦
+
+Ph.D. student, Huazhong University of Science and Technology.
 
 ## Education
 
-**[Degree / field]** — [Institution] · [Dates]
+**Doctoral studies** — Huazhong University of Science and Technology.  
+Advisor: Prof. Weiming Shen.
 
-## Research experience
+## Research interests
 
-**[Position / project]** — [Organization] · [Dates]
+Active perception and visual servoing; dual-arm deformable-object manipulation; visuotactile policy adaptation and reinforcement learning; failure recovery and experience memory.
 
-[Describe your contribution and results.]
+## Selected papers
 
-## Publications and awards
+- **Active Observation for Robust Visual Servoing in Robotic Manipulation.** Zhilun Hu, Yuqi Cheng, Yuxiang Tan, Wen-pan Li, Weiming Shen. IEEE CASE 2026, accepted. First author.
+- **Iterative Verify-and-Refine Vision-Language Agent for Reliable Dual-Arm Manipulation.** Yuqi Cheng, Zhilun Hu, Cheng Jiang, Qingyu Peng, Weiming Shen. Manuscript under review. Second author.
 
-[Add your own publications and verified awards.]
-
-## Download
-
-Add your CV PDF to the `files` folder and link it here when it is ready.
+[Publication details]({{ '/publications/' | relative_url }}) · [Research projects]({{ '/portfolio/' | relative_url }}) · [GitHub](https://github.com/169884902hzl)
