@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgHx" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f8fafc"/>
+    </linearGradient>
+    <marker id="arrHxBlue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#1d4ed8"/>
+    </marker>
+    <marker id="arrHxRed" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#dc2626"/>
+    </marker>
+    <marker id="arrHxGreen" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#15803d"/>
+    </marker>
+  </defs>
+
+  <rect width="800" height="500" rx="10" fill="url(#bgHx)" stroke="#cbd5e1" stroke-width="2"/>
+
+  <!-- Top Banner -->
+  <rect x="20" y="18" width="760" height="44" rx="6" fill="#0f172a"/>
+  <rect x="32" y="27" width="146" height="26" rx="4" fill="#4338ca"/>
+  <text x="105" y="44" text-anchor="middle" font-family="'JetBrains Mono', Consolas, monospace" font-size="11.5" font-weight="700" fill="#ffffff">HELIX FRAMEWORK</text>
+  <text x="194" y="45" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#f8fafc">Value Assessment, Reflex Feedback &amp; Experience Memory for Recovery</text>
+  <text x="764" y="44" text-anchor="end" font-family="'JetBrains Mono', Consolas, monospace" font-size="11" fill="#94a3b8">Simulation Research</text>
+
+  <!-- Left Panel: State-Space Trajectory & Recovery Manifold -->
+  <rect x="20" y="76" width="380" height="398" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="38" y="104" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#0f172a">A. State Manifold &amp; Recovery Trajectory</text>
+  <line x1="36" y1="114" x2="384" y2="114" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Target Basin of Attraction -->
+  <ellipse cx="315" cy="182" rx="54" ry="38" fill="#dcfce7" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <circle cx="322" cy="182" r="8" fill="#15803d"/>
+  <text x="322" y="204" text-anchor="middle" font-family="'JetBrains Mono', Consolas, monospace" font-size="11" font-weight="700" fill="#166534">Goal G*</text>
+
+  <!-- Start State s_0 -->
+  <circle cx="68" cy="368" r="7" fill="#0f172a"/>
+  <text x="68" y="392" text-anchor="middle" font-family="'JetBrains Mono', Consolas, monospace" font-size="11" font-weight="700" fill="#0f172a">s₀</text>
+
+  <!-- Nominal Trajectory (Deviated into Failure Zone) -->
+  <path d="M 68,368 Q 135,280 205,295" fill="none" stroke="#dc2626" stroke-width="3" marker-end="url(#arrHxRed)"/>
+  <text x="112" y="292" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#b91c1c">Nominal Action</text>
+
+  <!-- Failure Zone -->
+  <ellipse cx="228" cy="305" rx="46" ry="32" fill="#fee2e2" stroke="#ef4444" stroke-width="1.5"/>
+  <circle cx="215" cy="300" r="6" fill="#dc2626"/>
+  <text x="234" y="304" font-family="'JetBrains Mono', Consolas, monospace" font-size="10.5" font-weight="700" fill="#991b1b">s_fail</text>
+  <text x="228" y="352" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.5" fill="#dc2626">Disturbance / Slip</text>
+
+  <!-- Reflex Retreat Path -->
+  <path d="M 215,300 Q 175,260 175,218" fill="none" stroke="#1d4ed8" stroke-width="2.5" stroke-dasharray="4 3" marker-end="url(#arrHxBlue)"/>
+  <circle cx="175" cy="210" r="6" fill="#1d4ed8"/>
+  <text x="108" y="214" text-anchor="middle" font-family="'JetBrains Mono', Consolas, monospace" font-size="10.5" font-weight="700" fill="#1e40af">1. Reflex Safe State</text>
+
+  <!-- Memory-Guided Recovery Trajectory -->
+  <path d="M 181,208 Q 238,162 308,178" fill="none" stroke="#15803d" stroke-width="3.5" marker-end="url(#arrHxGreen)"/>
+  <text x="228" y="150" text-anchor="middle" font-family="'JetBrains Mono', Consolas, monospace" font-size="11" font-weight="700" fill="#15803d">2. Memory-Guided Recovery</text>
+
+  <rect x="38" y="416" width="344" height="42" rx="6" fill="#f1f5f9"/>
+  <text x="210" y="441" text-anchor="middle" font-family="'JetBrains Mono', Consolas, monospace" font-size="10.5" font-weight="600" fill="#334155">Detect V(s_t) &lt; τ_safe → Reflex → Memory Retrieval</text>
+
+  <!-- Right Panel: Three-Tier Closed-Loop Architecture -->
+  <rect x="416" y="76" width="364" height="398" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="434" y="104" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#0f172a">B. HELIX Closed-Loop Recovery Modules</text>
+  <line x1="434" y1="114" x2="762" y2="114" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Module 1: Value Assessment -->
+  <rect x="436" y="130" width="324" height="88" rx="6" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/>
+  <text x="452" y="154" font-family="Arial, sans-serif" font-size="12.5" font-weight="700" fill="#991b1b">1. Online Value &amp; Risk Assessment</text>
+  <text x="452" y="176" font-family="'JetBrains Mono', Consolas, monospace" font-size="11" fill="#b91c1c">ΔV_t = V_φ(s_t) − V_φ(s_{t-1})</text>
+  <text x="452" y="198" font-family="Arial, sans-serif" font-size="11" fill="#334155">Detects incipient execution failure &amp; anomalies</text>
+
+  <line x1="598" y1="218" x2="598" y2="242" stroke="#1d4ed8" stroke-width="2" marker-end="url(#arrHxBlue)"/>
+
+  <!-- Module 2: Fast Reflex Feedback -->
+  <rect x="436" y="244" width="324" height="88" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="452" y="268" font-family="Arial, sans-serif" font-size="12.5" font-weight="700" fill="#1e3a8a">2. Reflexive Feedback Controller</text>
+  <text x="452" y="290" font-family="'JetBrains Mono', Consolas, monospace" font-size="11" fill="#1d4ed8">a_reflex = π_reflex(s_t, e_contact)</text>
+  <text x="452" y="312" font-family="Arial, sans-serif" font-size="11" fill="#334155">Halts unsafe motion &amp; retracts to stable manifold</text>
+
+  <line x1="598" y1="332" x2="598" y2="356" stroke="#15803d" stroke-width="2" marker-end="url(#arrHxGreen)"/>
+
+  <!-- Module 3: Episodic Experience Memory -->
+  <rect x="436" y="358" width="324" height="96" rx="6" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/>
+  <text x="452" y="382" font-family="Arial, sans-serif" font-size="12.5" font-weight="700" fill="#065f46">3. Experience Memory Retrieval M_exp</text>
+  <text x="452" y="404" font-family="'JetBrains Mono', Consolas, monospace" font-size="11" fill="#15803d">k* = argmax_k sim(z(s_t), k_i) ∈ M_exp</text>
+  <text x="452" y="426" font-family="Arial, sans-serif" font-size="11" fill="#334155">Synthesizes corrective action proposals from</text>
+  <text x="452" y="442" font-family="Arial, sans-serif" font-size="11" fill="#334155">prior recovery episodes &amp; value-ranked rollouts</text>
+</svg>

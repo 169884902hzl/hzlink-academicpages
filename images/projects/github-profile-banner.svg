@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" width="100%" height="100%">
+  <defs>
+    <linearGradient id="heroBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="55%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f4c81"/>
+    </linearGradient>
+    <pattern id="heroGrid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M 32 0 L 0 0 0 32" fill="none" stroke="#334155" stroke-width="0.7" stroke-opacity="0.45"/>
+    </pattern>
+    <marker id="arrBanner" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#38bdf8"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="320" rx="14" fill="url(#heroBg)"/>
+  <rect width="1200" height="320" rx="14" fill="url(#heroGrid)"/>
+
+  <!-- Left Identity & Narrative Section -->
+  <rect x="44" y="36" width="246" height="28" rx="14" fill="#1e3a8a" stroke="#3b82f6" stroke-width="1"/>
+  <text x="167" y="54" text-anchor="middle" font-family="'JetBrains Mono', Consolas, monospace" font-size="11.5" font-weight="700" fill="#93c5fd" letter-spacing="1">ROBOTICS &amp; EMBODIED AI @ HUST</text>
+
+  <text x="44" y="114" font-family="Georgia, 'Times New Roman', serif" font-size="44" font-weight="700" fill="#ffffff">Zhilun Hu <tspan dx="14" font-family="'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="30" font-weight="600" fill="#cbd5e1">胡至伦</tspan></text>
+
+  <text x="44" y="154" font-family="Arial, sans-serif" font-size="17" font-weight="600" fill="#38bdf8">Reliable Robotic Manipulation via Closed-Loop Observation, Verification &amp; Adaptation</text>
+  <text x="44" y="184" font-family="Arial, sans-serif" font-size="14" fill="#cbd5e1">Ph.D. Student at Huazhong University of Science and Technology (HUST) · Advised by Prof. Weiming Shen</text>
+
+  <!-- Key Pillars Badges -->
+  <g transform="translate(44, 218)">
+    <rect x="0" y="0" width="148" height="58" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.2"/>
+    <text x="14" y="23" font-family="'JetBrains Mono', Consolas, monospace" font-size="10.5" font-weight="700" fill="#38bdf8">01 PERCEPTION</text>
+    <text x="14" y="43" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="#f8fafc">Active Visual Servo</text>
+
+    <line x1="148" y1="29" x2="170" y2="29" stroke="#38bdf8" stroke-width="1.8" marker-end="url(#arrBanner)"/>
+
+    <rect x="174" y="0" width="154" height="58" rx="8" fill="#1e293b" stroke="#60a5fa" stroke-width="1.2"/>
+    <text x="188" y="23" font-family="'JetBrains Mono', Consolas, monospace" font-size="10.5" font-weight="700" fill="#60a5fa">02 VERIFICATION</text>
+    <text x="188" y="43" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="#f8fafc">VR-Loop VLM Agent</text>
+
+    <line x1="328" y1="29" x2="350" y2="29" stroke="#38bdf8" stroke-width="1.8" marker-end="url(#arrBanner)"/>
+
+    <rect x="354" y="0" width="154" height="58" rx="8" fill="#1e293b" stroke="#34d399" stroke-width="1.2"/>
+    <text x="368" y="23" font-family="'JetBrains Mono', Consolas, monospace" font-size="10.5" font-weight="700" fill="#34d399">03 ADAPTATION</text>
+    <text x="368" y="43" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="#f8fafc">Visuotactile RL</text>
+
+    <line x1="508" y1="29" x2="530" y2="29" stroke="#38bdf8" stroke-width="1.8" marker-end="url(#arrBanner)"/>
+
+    <rect x="534" y="0" width="154" height="58" rx="8" fill="#1e293b" stroke="#a78bfa" stroke-width="1.2"/>
+    <text x="548" y="23" font-family="'JetBrains Mono', Consolas, monospace" font-size="10.5" font-weight="700" fill="#a78bfa">04 RECOVERY</text>
+    <text x="548" y="43" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="#f8fafc">HELIX Memory Loop</text>
+  </g>
+
+  <!-- Right Side: Closed-Loop SE(3) Emblem -->
+  <g transform="translate(985, 160)">
+    <circle cx="0" cy="0" r="115" fill="#0f172a" fill-opacity="0.65" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="6 4"/>
+    <circle cx="0" cy="0" r="88" fill="none" stroke="#64748b" stroke-width="1"/>
+    <!-- Active Camera & Gripper Vectors -->
+    <polygon points="-55,-42 28,-12 -6,48" fill="#0284c7" fill-opacity="0.22" stroke="#38bdf8" stroke-width="1.2" stroke-dasharray="3 3"/>
+    <path d="M -75,58 L -68,5 L -55,-42" fill="none" stroke="#94a3b8" stroke-width="6" stroke-linecap="round"/>
+    <path d="M 75,58 L 65,-8 L 22,-15" fill="none" stroke="#38bdf8" stroke-width="7" stroke-linecap="round"/>
+    <rect x="-10" y="-14" width="20" height="20" rx="3" fill="#f59e0b" fill-opacity="0.3" stroke="#fbbf24" stroke-width="2"/>
+    <text x="0" y="82" text-anchor="middle" font-family="'JetBrains Mono', Consolas, monospace" font-size="11" font-weight="700" fill="#e2e8f0">SE(3) Closed-Loop</text>
+  </g>
+</svg>

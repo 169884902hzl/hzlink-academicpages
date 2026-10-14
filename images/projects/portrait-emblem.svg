@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 560" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="50%" stop-color="#f1f5f9"/>
+      <stop offset="100%" stop-color="#e2e8f0"/>
+    </linearGradient>
+    <linearGradient id="accentBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f4c81"/>
+      <stop offset="100%" stop-color="#1e3a8a"/>
+    </linearGradient>
+    <linearGradient id="fovGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#0284c7" stop-opacity="0.02"/>
+    </linearGradient>
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#cbd5e1" stroke-width="0.6" stroke-opacity="0.6"/>
+    </pattern>
+  </defs>
+
+  <!-- Background & Border -->
+  <rect width="480" height="560" rx="10" fill="url(#bgGrad)" stroke="#cbd5e1" stroke-width="2"/>
+  <rect x="16" y="16" width="448" height="528" rx="6" fill="url(#grid)"/>
+  <rect x="16" y="16" width="448" height="528" rx="6" fill="none" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4 4"/>
+
+  <!-- Top Header Tag -->
+  <rect x="36" y="34" width="186" height="26" rx="4" fill="#0f172a"/>
+  <text x="129" y="51" text-anchor="middle" font-family="'JetBrains Mono', Consolas, monospace" font-size="11" font-weight="600" fill="#f8fafc" letter-spacing="1.2">SE(3) MANIPULATION</text>
+  <text x="444" y="51" text-anchor="end" font-family="'JetBrains Mono', Consolas, monospace" font-size="11" fill="#475569">HUST · MSE</text>
+
+  <!-- Central Robotic Manipulation & Active Perception Schematic -->
+  <g transform="translate(240, 235)">
+    <!-- Outer Manifold Ring -->
+    <circle cx="0" cy="0" r="132" fill="#ffffff" fill-opacity="0.75" stroke="#cbd5e1" stroke-width="1.5"/>
+    <circle cx="0" cy="0" r="112" fill="none" stroke="#0f4c81" stroke-width="1" stroke-dasharray="5 5" stroke-opacity="0.45"/>
+    <ellipse cx="0" cy="0" rx="112" ry="42" fill="none" stroke="#0f4c81" stroke-width="1" stroke-opacity="0.25" transform="rotate(-22)"/>
+
+    <!-- Active Camera Frustum (Left Arm Eye-in-Hand) -->
+    <polygon points="-78,-52 32,-18 -8,62" fill="url(#fovGrad)" stroke="#0284c7" stroke-width="1.2" stroke-dasharray="4 3"/>
+
+    <!-- Left Arm (Active Camera Arm) -->
+    <path d="M -105,78 L -98,8 L -78,-52" fill="none" stroke="#334155" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="-105" cy="78" r="7" fill="#0f172a"/>
+    <circle cx="-98" cy="8" r="6" fill="#0f4c81"/>
+    <!-- Camera head -->
+    <g transform="translate(-78, -52) rotate(24)">
+      <rect x="-10" y="-8" width="20" height="16" rx="3" fill="#0284c7" stroke="#0f172a" stroke-width="1.5"/>
+      <polygon points="10,-5 18,-10 18,10 10,5" fill="#38bdf8" stroke="#0f172a" stroke-width="1.2"/>
+    </g>
+    <text x="-82" y="-72" font-family="'JetBrains Mono', Consolas, monospace" font-size="10" font-weight="600" fill="#0369a1">{C} Active FoV</text>
+
+    <!-- Right Arm (Grasping Arm) -->
+    <path d="M 98,78 L 88,-6 L 26,-16" fill="none" stroke="#0f4c81" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="98" cy="78" r="7" fill="#0f172a"/>
+    <circle cx="88" cy="-6" r="6.5" fill="#ffffff" stroke="#0f4c81" stroke-width="2.5"/>
+    <!-- Parallel Gripper -->
+    <g transform="translate(26, -16) rotate(165)">
+      <path d="M 0,-12 L 0,12 M 0,-12 L 16,-12 M 0,12 L 16,12" fill="none" stroke="#0f172a" stroke-width="3.5" stroke-linecap="round"/>
+    </g>
+    <text x="48" y="-34" font-family="'JetBrains Mono', Consolas, monospace" font-size="10" font-weight="600" fill="#0f4c81">{G} Gripper</text>
+
+    <!-- Target Object & Coordinate Frame {O} -->
+    <rect x="-14" y="-18" width="24" height="24" rx="4" fill="#f59e0b" fill-opacity="0.2" stroke="#d97706" stroke-width="2"/>
+    <!-- Coordinate axes at target -->
+    <line x1="-2" y1="-6" x2="26" y2="-6" stroke="#dc2626" stroke-width="2"/>
+    <polygon points="26,-6 20,-9 20,-3" fill="#dc2626"/>
+    <line x1="-2" y1="-6" x2="-2" y2="-34" stroke="#16a34a" stroke-width="2"/>
+    <polygon points="-2,-34 -5,-28 1,-28" fill="#16a34a"/>
+    <line x1="-2" y1="-6" x2="-18" y2="10" stroke="#2563eb" stroke-width="2"/>
+    <circle cx="-2" cy="-6" r="3" fill="#0f172a"/>
+    <text x="-4" y="26" text-anchor="middle" font-family="'JetBrains Mono', Consolas, monospace" font-size="10" font-weight="600" fill="#b45309">e_rel → 0</text>
+
+    <!-- Closed-loop Feedback Arc -->
+    <path d="M -52,68 C -15,92 25,92 62,68" fill="none" stroke="#0f4c81" stroke-width="1.8" stroke-dasharray="4 3"/>
+    <polygon points="62,68 53,67 57,74" fill="#0f4c81"/>
+    <text x="5" y="98" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.5" font-weight="600" fill="#334155">Closed-Loop Perception · Verification · Adaptation</text>
+  </g>
+
+  <!-- Scholar Identity Card at Bottom -->
+  <rect x="32" y="396" width="416" height="128" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <line x1="52" y1="448" x2="428" y2="448" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="52" y="426" font-family="Georgia, 'Times New Roman', serif" font-size="22" font-weight="700" fill="#0f172a">Zhilun Hu</text>
+  <text x="172" y="426" font-family="'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="18" font-weight="600" fill="#334155">胡至伦</text>
+  <rect x="326" y="408" width="102" height="24" rx="12" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="377" y="424" text-anchor="middle" font-family="'JetBrains Mono', Consolas, monospace" font-size="10.5" font-weight="600" fill="#1d4ed8">Ph.D. @ HUST</text>
+
+  <text x="52" y="472" font-family="Arial, sans-serif" font-size="12.5" font-weight="600" fill="#1e293b">Research Focus: Reliable Robotic Manipulation</text>
+  <text x="52" y="492" font-family="Arial, sans-serif" font-size="11.5" fill="#475569">Active Perception · VLM Verification · Visuotactile RL · Recovery</text>
+  <text x="52" y="512" font-family="'JetBrains Mono', Consolas, monospace" font-size="10" fill="#64748b">Advisor: Prof. Weiming Shen · Dept. of MSE, HUST</text>
+</svg>

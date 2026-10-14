@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgVr" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f8fafc"/>
+    </linearGradient>
+    <marker id="arrRed" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#dc2626"/>
+    </marker>
+    <marker id="arrEmerald" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#059669"/>
+    </marker>
+    <marker id="arrDark" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#1e293b"/>
+    </marker>
+  </defs>
+
+  <rect width="800" height="500" rx="10" fill="url(#bgVr)" stroke="#cbd5e1" stroke-width="2"/>
+
+  <!-- Top Banner -->
+  <rect x="20" y="18" width="760" height="44" rx="6" fill="#0f172a"/>
+  <rect x="32" y="27" width="146" height="26" rx="4" fill="#1e40af"/>
+  <text x="105" y="44" text-anchor="middle" font-family="'JetBrains Mono', Consolas, monospace" font-size="11.5" font-weight="700" fill="#ffffff">VR-LOOP AGENT</text>
+  <text x="194" y="45" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#f8fafc">Iterative Verify-and-Refine VLM for Dual-Arm Rope Untangling</text>
+  <text x="764" y="44" text-anchor="end" font-family="'JetBrains Mono', Consolas, monospace" font-size="11" fill="#94a3b8">Under Review</text>
+
+  <!-- Step 1: Deformable Rope Tangle & Mask Perception -->
+  <rect x="20" y="76" width="236" height="398" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="36" y="104" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#0f172a">1. RGB-D &amp; Mask Perception</text>
+  <line x1="36" y1="114" x2="240" y2="114" stroke="#e2e8f0" stroke-width="1"/>
+
+  <rect x="36" y="128" width="204" height="175" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <!-- Tangled Rope Knot Drawing -->
+  <path d="M 58,255 C 72,165 185,155 198,235 C 208,285 95,280 105,205 C 115,145 190,190 218,162" fill="none" stroke="#334155" stroke-width="10" stroke-linecap="round"/>
+  <path d="M 58,255 C 72,165 185,155 198,235 C 208,285 95,280 105,205 C 115,145 190,190 218,162" fill="none" stroke="#94a3b8" stroke-width="4" stroke-dasharray="6 4" stroke-linecap="round"/>
+
+  <!-- Invalid initial candidate arrow -->
+  <circle cx="145" cy="212" r="6" fill="#dc2626"/>
+  <line x1="145" y1="212" x2="195" y2="255" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arrRed)"/>
+  <text x="138" y="292" text-anchor="middle" font-family="'JetBrains Mono', Consolas, monospace" font-size="10.5" font-weight="600" fill="#dc2626">✗ Naive pull tightens knot</text>
+
+  <rect x="36" y="318" width="204" height="136" rx="6" fill="#f1f5f9"/>
+  <text x="48" y="340" font-family="Arial, sans-serif" font-size="11.5" font-weight="700" fill="#1e293b">Geometric &amp; Mask Inputs:</text>
+  <text x="48" y="362" font-family="Arial, sans-serif" font-size="11" fill="#475569">• Segmented rope mask M_rope</text>
+  <text x="48" y="382" font-family="Arial, sans-serif" font-size="11" fill="#475569">• Crossing &amp; over/under topology</text>
+  <text x="48" y="402" font-family="Arial, sans-serif" font-size="11" fill="#475569">• Depth point cloud P ∈ R^(N×3)</text>
+  <text x="48" y="428" font-family="'JetBrains Mono', Consolas, monospace" font-size="10.5" font-weight="600" fill="#0f4c81">Input: (I_rgb, D_depth, M_rope)</text>
+
+  <!-- Center Panel: Iterative Verify-and-Refine VLM Loop -->
+  <rect x="272" y="76" width="256" height="398" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="288" y="104" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#0f172a">2. Verify-and-Refine Loop</text>
+  <line x1="288" y1="114" x2="512" y2="114" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Proposer Node -->
+  <rect x="292" y="130" width="216" height="68" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="400" y="152" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#1e3a8a">VLM Action Proposer</text>
+  <text x="400" y="172" text-anchor="middle" font-family="'JetBrains Mono', Consolas, monospace" font-size="10.5" fill="#1e40af">Propose {(p₁, v₁), (p₂, v₂)}^(k)</text>
+  <text x="400" y="188" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.5" fill="#475569">Grasp points &amp; pull directions</text>
+
+  <line x1="400" y1="198" x2="400" y2="222" stroke="#1e293b" stroke-width="2" marker-end="url(#arrDark)"/>
+
+  <!-- Visual Overlay Verification Node -->
+  <rect x="292" y="224" width="216" height="82" rx="6" fill="#fef3c7" stroke="#fcd34d" stroke-width="1.5"/>
+  <text x="400" y="246" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#92400e">Image-Overlay Verifier</text>
+  <text x="400" y="265" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.5" fill="#78350f">Render candidate arrows on image</text>
+  <text x="400" y="282" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.5" fill="#78350f">Check mask &amp; tangle constraints</text>
+  <text x="400" y="298" text-anchor="middle" font-family="'JetBrains Mono', Consolas, monospace" font-size="10" font-weight="700" fill="#b45309">Pass / Critique Δ(p, v)</text>
+
+  <line x1="400" y1="306" x2="400" y2="332" stroke="#1e293b" stroke-width="2" marker-end="url(#arrDark)"/>
+
+  <!-- Geometric Constraint Projection Node -->
+  <rect x="292" y="334" width="216" height="72" rx="6" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="1.5"/>
+  <text x="400" y="356" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#065f46">Mask &amp; Depth Refinement</text>
+  <text x="400" y="375" text-anchor="middle" font-family="'JetBrains Mono', Consolas, monospace" font-size="10.5" fill="#047857">p* = Proj_M(p),  v* ∈ C_free</text>
+  <text x="400" y="393" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.5" fill="#475569">Collision-free 3D dual-arm pose</text>
+
+  <!-- Iterative Feedback Loop Arrow on Left of Center Panel -->
+  <path d="M 292,265 L 278,265 L 278,164 L 290,164" fill="none" stroke="#d97706" stroke-width="2" stroke-dasharray="4 2" marker-end="url(#arrDark)"/>
+
+  <rect x="292" y="420" width="216" height="34" rx="5" fill="#0f172a"/>
+  <text x="400" y="441" text-anchor="middle" font-family="'JetBrains Mono', Consolas, monospace" font-size="10.5" font-weight="600" fill="#38bdf8">Iterative Self-Correction Loop</text>
+
+  <!-- Right Panel: Verified Dual-Arm Execution -->
+  <rect x="544" y="76" width="236" height="398" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="560" y="104" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#0f172a">3. Verified Dual-Arm Action</text>
+  <line x1="560" y1="114" x2="764" y2="114" stroke="#e2e8f0" stroke-width="1"/>
+
+  <rect x="560" y="128" width="204" height="175" rx="6" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1.5"/>
+  <!-- Untangling Rope with Verified Dual-Arm Pull Vectors -->
+  <path d="M 585,248 C 605,180 655,175 665,212 C 675,248 710,235 738,175" fill="none" stroke="#1e293b" stroke-width="9" stroke-linecap="round"/>
+  <!-- Left Grasp p1* and Pull v1* -->
+  <circle cx="622" cy="192" r="7" fill="#059669" stroke="#ffffff" stroke-width="2"/>
+  <line x1="622" y1="192" x2="578" y2="152" stroke="#059669" stroke-width="3" marker-end="url(#arrEmerald)"/>
+  <text x="595" y="145" font-family="'JetBrains Mono', Consolas, monospace" font-size="10.5" font-weight="700" fill="#065f46">(p₁*, v₁*)</text>
+
+  <!-- Right Grasp p2* and Pull v2* -->
+  <circle cx="696" cy="224" r="7" fill="#0284c7" stroke="#ffffff" stroke-width="2"/>
+  <line x1="696" y1="224" x2="746" y2="256" stroke="#0284c7" stroke-width="3" marker-end="url(#arrDark)"/>
+  <text x="716" y="274" font-family="'JetBrains Mono', Consolas, monospace" font-size="10.5" font-weight="700" fill="#0369a1">(p₂*, v₂*)</text>
+
+  <text x="662" y="293" text-anchor="middle" font-family="'JetBrains Mono', Consolas, monospace" font-size="10.5" font-weight="700" fill="#15803d">✓ Knot Loosened Safely</text>
+
+  <rect x="560" y="318" width="204" height="136" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="572" y="340" font-family="Arial, sans-serif" font-size="11.5" font-weight="700" fill="#0f172a">Key Contributions:</text>
+  <text x="572" y="362" font-family="Arial, sans-serif" font-size="11" fill="#334155">• Pre-execution action verification</text>
+  <text x="572" y="382" font-family="Arial, sans-serif" font-size="11" fill="#334155">• Visual overlay &amp; mask constraints</text>
+  <text x="572" y="402" font-family="Arial, sans-serif" font-size="11" fill="#334155">• Depth-informed 3D trajectory</text>
+  <text x="572" y="428" font-family="'JetBrains Mono', Consolas, monospace" font-size="10.5" font-weight="600" fill="#15803d">Reliable Deformable Manipulation</text>
+</svg>
