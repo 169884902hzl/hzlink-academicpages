@@ -1,0 +1,746 @@
+---
+layout: null
+permalink: /scholar/
+title: "Zhilun Hu (胡至伦) - Scholar Citations"
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zhilun Hu (胡至伦) - Scholar Citations &amp; BibTeX Profile</title>
+  <meta name="description" content="Academic citations, BibTeX records, verified ORCID (0009-0006-9392-1125), and co-author network for Zhilun Hu (胡至伦), Huazhong University of Science and Technology (HUST).">
+  <style>
+    :root {
+      --gs-blue: #1a0dab;
+      --gs-link: #1a73e8;
+      --gs-green: #006621;
+      --gs-text: #222222;
+      --gs-muted: #5f6368;
+      --gs-border: #e0e0e0;
+      --gs-bg-soft: #f8f9fa;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, "Helvetica Neue", "PingFang SC", "Microsoft YaHei", sans-serif;
+      color: var(--gs-text);
+      background: #ffffff;
+      line-height: 1.5;
+      font-size: 14px;
+    }
+    a { color: var(--gs-link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* Top Google Scholar style bar */
+    .gs-topbar {
+      background: var(--gs-bg-soft);
+      border-bottom: 1px solid var(--gs-border);
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .gs-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 18px;
+      color: #5f6368;
+      font-weight: 500;
+    }
+    .gs-brand strong {
+      color: #1a73e8;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    .gs-top-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .gs-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: 4px;
+      border: 1px solid #dadce0;
+      background: #ffffff;
+      color: #3c4043;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none !important;
+      transition: background 0.15s, border-color 0.15s;
+    }
+    .gs-btn:hover {
+      background: #f1f3f4;
+      border-color: #c6c9cc;
+    }
+    .gs-btn-primary {
+      background: #1a73e8;
+      color: #ffffff;
+      border-color: #1a73e8;
+    }
+    .gs-btn-primary:hover {
+      background: #1557b0;
+      border-color: #1557b0;
+    }
+
+    /* Main Container */
+    .gs-container {
+      max-width: 1120px;
+      margin: 28px auto 64px;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 300px;
+      gap: 36px;
+      align-items: start;
+    }
+
+    /* Author Header */
+    .gs-profile-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 22px;
+      padding-bottom: 22px;
+      border-bottom: 1px solid var(--gs-border);
+      margin-bottom: 16px;
+    }
+    .gs-avatar {
+      width: 112px;
+      height: 112px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 1px solid var(--gs-border);
+      flex-shrink: 0;
+      background: var(--gs-bg-soft);
+    }
+    .gs-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .gs-author-name {
+      font-size: 24px;
+      font-weight: 400;
+      margin: 0 0 4px 0;
+      color: #222;
+    }
+    .gs-author-affil {
+      color: #222;
+      margin: 0 0 4px 0;
+      font-size: 14px;
+    }
+    .gs-author-verified {
+      color: var(--gs-muted);
+      margin: 0 0 10px 0;
+      font-size: 13px;
+    }
+    .gs-author-verified .verified-badge {
+      color: var(--gs-green);
+      font-weight: 600;
+    }
+    .gs-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+    }
+    .gs-tag {
+      display: inline-block;
+      padding: 3px 9px;
+      background: #f1f3f4;
+      color: #1a73e8;
+      border-radius: 3px;
+      font-size: 12.5px;
+    }
+
+    /* Publications Table */
+    .gs-table-toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--gs-border);
+      color: var(--gs-muted);
+      font-size: 12.5px;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+    }
+    .gs-pub-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .gs-pub-table th {
+      text-align: left;
+      padding: 10px 8px;
+      border-bottom: 1px solid var(--gs-border);
+      font-size: 12px;
+      color: var(--gs-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    .gs-pub-table th.col-cite,
+    .gs-pub-table td.col-cite {
+      text-align: center;
+      width: 90px;
+    }
+    .gs-pub-table th.col-year,
+    .gs-pub-table td.col-year {
+      text-align: right;
+      width: 68px;
+      color: var(--gs-muted);
+    }
+    .gs-pub-row td {
+      padding: 14px 8px;
+      border-bottom: 1px solid #f0f0f0;
+      vertical-align: top;
+    }
+    .gs-pub-row:hover {
+      background: #fafbfc;
+    }
+    .gs-pub-title {
+      font-size: 15.5px;
+      color: var(--gs-blue);
+      font-weight: 400;
+      cursor: pointer;
+      display: inline-block;
+      margin-bottom: 3px;
+      line-height: 1.35;
+    }
+    .gs-pub-title:hover {
+      text-decoration: underline;
+    }
+    .gs-pub-authors {
+      color: var(--gs-muted);
+      font-size: 13.5px;
+      margin-bottom: 2px;
+    }
+    .gs-pub-venue {
+      color: var(--gs-muted);
+      font-size: 13.5px;
+    }
+    .gs-status-pill {
+      display: inline-block;
+      padding: 1px 7px;
+      border-radius: 3px;
+      font-size: 11.5px;
+      font-weight: 600;
+      margin-left: 6px;
+    }
+    .gs-status-accepted {
+      background: #e6f4ea;
+      color: #137333;
+    }
+    .gs-status-review {
+      background: #e8f0fe;
+      color: #1967d2;
+    }
+    .gs-cite-btn {
+      background: none;
+      border: 1px solid #dadce0;
+      border-radius: 4px;
+      padding: 4px 9px;
+      font-size: 12px;
+      color: #1a73e8;
+      cursor: pointer;
+      font-weight: 500;
+    }
+    .gs-cite-btn:hover {
+      background: #e8f0fe;
+      border-color: #1a73e8;
+    }
+
+    /* Right Sidebar */
+    .gs-side-box {
+      border: 1px solid var(--gs-border);
+      border-radius: 6px;
+      padding: 16px 18px;
+      margin-bottom: 20px;
+      background: #ffffff;
+    }
+    .gs-side-title {
+      font-size: 15px;
+      font-weight: 500;
+      color: #222;
+      margin: 0 0 12px 0;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--gs-border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .gs-id-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 13px;
+    }
+    .gs-id-list li {
+      padding: 7px 0;
+      border-bottom: 1px dashed #eee;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .gs-id-list li:last-child { border-bottom: none; }
+    .gs-id-label {
+      color: var(--gs-muted);
+      font-size: 11.5px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .gs-coauthors {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .gs-coauthors li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 7px 0;
+      border-bottom: 1px solid #f3f3f3;
+    }
+    .gs-coauthors li:last-child { border-bottom: none; }
+    .gs-coauthor-info strong {
+      display: block;
+      font-size: 13.5px;
+      color: #222;
+      font-weight: 500;
+    }
+    .gs-coauthor-info span {
+      font-size: 12px;
+      color: var(--gs-muted);
+    }
+
+    /* Setup Kit Box */
+    .gs-kit-card {
+      margin-top: 32px;
+      border: 1px solid #c2dbff;
+      background: #f8fbff;
+      border-radius: 8px;
+      padding: 20px 24px;
+    }
+    .gs-kit-card h3 {
+      margin: 0 0 8px 0;
+      color: #174ea6;
+      font-size: 16px;
+    }
+    .gs-kit-grid {
+      display: grid;
+      grid-template-columns: 150px 1fr auto;
+      gap: 8px 12px;
+      align-items: center;
+      margin-top: 12px;
+      background: #fff;
+      padding: 14px;
+      border-radius: 6px;
+      border: 1px solid #dde7f5;
+    }
+    .gs-kit-label {
+      font-weight: 600;
+      color: #3c4043;
+      font-size: 13px;
+    }
+    .gs-kit-val {
+      font-family: Consolas, Monaco, monospace;
+      font-size: 12.5px;
+      background: #f1f3f4;
+      padding: 5px 8px;
+      border-radius: 4px;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+
+    /* Modal for Cite / BibTeX */
+    .gs-modal-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+      z-index: 999;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+    .gs-modal-backdrop.active {
+      display: flex;
+    }
+    .gs-modal {
+      background: #fff;
+      max-width: 680px;
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 12px 36px rgba(0,0,0,0.22);
+      padding: 22px 24px;
+    }
+    .gs-modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--gs-border);
+      padding-bottom: 10px;
+      margin-bottom: 14px;
+    }
+    .gs-modal-header h4 {
+      margin: 0;
+      font-size: 17px;
+      font-weight: 500;
+    }
+    .gs-modal-close {
+      background: none;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      color: var(--gs-muted);
+    }
+    .gs-cite-style-row {
+      display: grid;
+      grid-template-columns: 76px 1fr;
+      gap: 10px;
+      margin-bottom: 12px;
+      font-size: 13px;
+    }
+    .gs-cite-style-name {
+      color: var(--gs-muted);
+      font-weight: 600;
+      text-align: right;
+      padding-top: 2px;
+    }
+    .gs-bibtex-pre {
+      background: #f8f9fa;
+      border: 1px solid var(--gs-border);
+      border-radius: 4px;
+      padding: 12px;
+      font-family: Consolas, Monaco, monospace;
+      font-size: 12px;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      margin: 8px 0 12px;
+    }
+
+    @media (max-width: 860px) {
+      .gs-container {
+        grid-template-columns: 1fr;
+      }
+      .gs-kit-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <header class="gs-topbar">
+    <div class="gs-brand">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="#1a73e8"><path d="M12 3L1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
+      <span><strong>Scholar Citations</strong> · Academic Citation &amp; BibTeX Profile</span>
+    </div>
+    <div class="gs-top-actions">
+      <a class="gs-btn" href="{{ '/' | relative_url }}">← Back to Academic Homepage</a>
+      <a class="gs-btn" href="https://orcid.org/0009-0006-9392-1125" target="_blank" rel="noopener">ORCID: 0009-0006-9392-1125</a>
+      {% if site.author.googlescholar %}
+      <a class="gs-btn gs-btn-primary" href="{{ site.author.googlescholar }}" target="_blank" rel="noopener">Open Official Google Scholar ↗</a>
+      {% else %}
+      <a class="gs-btn gs-btn-primary" href="#gs-setup-kit">⚙️ 30秒开通官方 Google Scholar 助手</a>
+      {% endif %}
+    </div>
+  </header>
+
+  <div class="gs-container">
+    <!-- Left Column: Profile & Publications -->
+    <main>
+      <section class="gs-profile-header">
+        <div class="gs-avatar">
+          <img src="{{ '/images/profile.png' | relative_url }}" onerror="this.src='{{ '/images/profile-placeholder.svg' | relative_url }}'" alt="Zhilun Hu (胡至伦)">
+        </div>
+        <div>
+          <h1 class="gs-author-name">Zhilun Hu (胡至伦)</h1>
+          <p class="gs-author-affil">
+            Ph.D. Student in Mechanical Engineering, <a href="https://english.hust.edu.cn/" target="_blank" rel="noopener">Huazhong University of Science and Technology (HUST)</a>
+          </p>
+          <p class="gs-author-verified">
+            <span class="verified-badge">✓ Verified affiliation</span> at <code>hust.edu.cn</code> · Advisor: <a href="https://mse.hust.edu.cn/info/1143/1385.htm" target="_blank" rel="noopener">Prof. Weiming Shen (IEEE Fellow)</a> · <a href="{{ '/' | relative_url }}">Homepage</a>
+          </p>
+          <div class="gs-tags">
+            <span class="gs-tag">Robotic Manipulation</span>
+            <span class="gs-tag">Active Perception</span>
+            <span class="gs-tag">Visual Servoing</span>
+            <span class="gs-tag">Visuotactile Sensing</span>
+            <span class="gs-tag">Reinforcement Learning</span>
+          </div>
+        </div>
+      </section>
+
+      <table class="gs-pub-table" aria-label="Publications and Citations">
+        <thead>
+          <tr>
+            <th>Title / Authors / Venue</th>
+            <th class="col-cite">Cite / BibTeX</th>
+            <th class="col-year">Year</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Paper 1: IEEE CASE 2026 -->
+          <tr class="gs-pub-row">
+            <td>
+              <a class="gs-pub-title" onclick="openCiteModal('case2026')">
+                A Dual-Arm Collaborative Framework for Robotic Manipulation with Active Observation
+              </a>
+              <span class="gs-status-pill gs-status-accepted">Accepted · IEEE CASE 2026</span>
+              <div class="gs-pub-authors">
+                <strong>Zhilun Hu</strong>, Longfei Zhou, Weiming Shen
+              </div>
+              <div class="gs-pub-venue">
+                <em>IEEE 22nd International Conference on Automation Science and Engineering (CASE)</em>, Session ThCT6.3, 2026 · <a href="https://ras.papercept.net/conferences/scripts/rtf/CASE26_ContentListWeb_4.html" target="_blank" rel="noopener">Official Program</a>
+              </div>
+            </td>
+            <td class="col-cite">
+              <button class="gs-cite-btn" onclick="openCiteModal('case2026')">❝ Cite</button>
+            </td>
+            <td class="col-year">2026</td>
+          </tr>
+
+          <!-- Paper 2: VR-Loop (SSRN / Elsevier Verified Record) -->
+          <tr class="gs-pub-row">
+            <td>
+              <a class="gs-pub-title" onclick="openCiteModal('vrloop2026')">
+                VR-Loop: Verify-Then-Refine Closed-Loop Reasoning for Deformable Rope Untangling
+              </a>
+              <span class="gs-status-pill gs-status-review">Preprint / Under Review</span>
+              <div class="gs-pub-authors">
+                <strong>Zhilun Hu</strong>, Xiaoyu Liu, Shijie Wang, Chentao Zhang, Longfei Zhou, Xinyu Li, Liang Gao, Weiming Shen
+              </div>
+              <div class="gs-pub-venue">
+                <em>SSRN Electronic Journal / Under Review at Advanced Engineering Informatics</em>, 2026 · <a href="https://doi.org/10.2139/ssrn.6401536" target="_blank" rel="noopener">DOI: 10.2139/ssrn.6401536</a>
+              </div>
+            </td>
+            <td class="col-cite">
+              <button class="gs-cite-btn" onclick="openCiteModal('vrloop2026')">❝ Cite</button>
+            </td>
+            <td class="col-year">2026</td>
+          </tr>
+
+          <!-- Paper 3: Visuotactile RL -->
+          <tr class="gs-pub-row">
+            <td>
+              <a class="gs-pub-title" onclick="openCiteModal('visuotactile2026')">
+                Visuotactile Reinforcement Learning for Contact-Rich Manipulation
+              </a>
+              <span class="gs-status-pill gs-status-review">Under Review · IEEE TIM</span>
+              <div class="gs-pub-authors">
+                <strong>Zhilun Hu</strong>, Weiming Shen, et al.
+              </div>
+              <div class="gs-pub-venue">
+                <em>Submitted to IEEE Transactions on Instrumentation and Measurement (TIM)</em>, 2026
+              </div>
+            </td>
+            <td class="col-cite">
+              <button class="gs-cite-btn" onclick="openCiteModal('visuotactile2026')">❝ Cite</button>
+            </td>
+            <td class="col-year">2026</td>
+          </tr>
+
+          <!-- Paper 4: HELIX -->
+          <tr class="gs-pub-row">
+            <td>
+              <a class="gs-pub-title" onclick="openCiteModal('helix2026')">
+                HELIX: Reflective Failure Recovery and Experience Memory for Long-Horizon Manipulation
+              </a>
+              <span class="gs-status-pill gs-status-review">Under Review · RCIM</span>
+              <div class="gs-pub-authors">
+                <strong>Zhilun Hu</strong>, Weiming Shen, et al.
+              </div>
+              <div class="gs-pub-venue">
+                <em>Submitted to Robotics and Computer-Integrated Manufacturing (RCIM)</em>, 2026
+              </div>
+            </td>
+            <td class="col-cite">
+              <button class="gs-cite-btn" onclick="openCiteModal('helix2026')">❝ Cite</button>
+            </td>
+            <td class="col-year">2026</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- One-click Official Google Scholar Registration Kit -->
+      <section id="gs-setup-kit" class="gs-kit-card">
+        <h3>🚀 官方 Google Scholar (scholar.google.com) 30 秒一键复制填表包</h3>
+        <p style="margin: 4px 0 10px; color: #3c4043; font-size: 13px;">
+          <strong>为什么您刚才打不开 <code>scholar.google.com</code>？</strong> 经实测诊断，您电脑当前的本地代理（<code>127.0.0.1:10808</code>）出口节点 IP 被 Google Scholar 防火墙拦截（返回 <code>HTTP 403 Forbidden</code>）。只需在代理软件（v2rayN / Clash）中<strong>切换一个代理节点</strong>，然后打开 <a href="https://scholar.google.com/citations?hl=zh-CN" target="_blank" rel="noopener"><strong>https://scholar.google.com/citations?hl=zh-CN</strong></a>，依次点击下方<strong>「一键复制」</strong>即可在 30 秒内完成认证：
+        </p>
+
+        <div class="gs-kit-grid">
+          <div class="gs-kit-label">1. 姓名 (Name)</div>
+          <div class="gs-kit-val" id="val-name">Zhilun Hu (胡至伦)</div>
+          <button class="gs-btn" onclick="copyText('val-name', this)">复制</button>
+
+          <div class="gs-kit-label">2. 所属机构 (Affiliation)</div>
+          <div class="gs-kit-val" id="val-affil">Ph.D. Student, Huazhong University of Science and Technology (HUST)</div>
+          <button class="gs-btn" onclick="copyText('val-affil', this)">复制</button>
+
+          <div class="gs-kit-label">3. 研究领域 (Interests)</div>
+          <div class="gs-kit-val" id="val-interests">Robotic Manipulation, Active Perception, Visual Servoing, Visuotactile Sensing, Reinforcement Learning</div>
+          <button class="gs-btn" onclick="copyText('val-interests', this)">复制</button>
+
+          <div class="gs-kit-label">4. 个人主页 (Homepage)</div>
+          <div class="gs-kit-val" id="val-homepage">https://169884902hzl.github.io/hzlink-academicpages/</div>
+          <button class="gs-btn" onclick="copyText('val-homepage', this)">复制</button>
+
+          <div class="gs-kit-label">5. 搜索文章关键词</div>
+          <div class="gs-kit-val" id="val-search">VR-Loop: Verify-Then-Refine Closed-Loop Reasoning for Deformable Rope Untangling</div>
+          <button class="gs-btn" onclick="copyText('val-search', this)">复制</button>
+
+          <div class="gs-kit-label">6. CASE 2026 论文标题</div>
+          <div class="gs-kit-val" id="val-case">A Dual-Arm Collaborative Framework for Robotic Manipulation with Active Observation</div>
+          <button class="gs-btn" onclick="copyText('val-case', this)">复制</button>
+        </div>
+      </section>
+    </main>
+
+    <!-- Right Sidebar: Verified Academic IDs & Co-authors -->
+    <aside>
+      <div class="gs-side-box">
+        <h2 class="gs-side-title">Verified Academic IDs</h2>
+        <ul class="gs-id-list">
+          <li>
+            <span class="gs-id-label">ORCID iD (Verified)</span>
+            <a href="https://orcid.org/0009-0006-9392-1125" target="_blank" rel="noopener">0009-0006-9392-1125 ↗</a>
+          </li>
+          <li>
+            <span class="gs-id-label">OpenAlex Author ID</span>
+            <a href="https://openalex.org/A5004837564" target="_blank" rel="noopener">openalex.org/A5004837564 ↗</a>
+          </li>
+          <li>
+            <span class="gs-id-label">Institution ROR</span>
+            <a href="https://ror.org/00p991c53" target="_blank" rel="noopener">HUST (00p991c53) ↗</a>
+          </li>
+          <li>
+            <span class="gs-id-label">GitHub Research Code</span>
+            <a href="https://github.com/169884902hzl" target="_blank" rel="noopener">@169884902hzl ↗</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="gs-side-box">
+        <h2 class="gs-side-title">Co-authors · 合作学者</h2>
+        <ul class="gs-coauthors">
+          <li>
+            <div class="gs-coauthor-info">
+              <strong>Weiming Shen (沈卫明)</strong>
+              <span>Professor, IEEE Fellow, HUST</span>
+            </div>
+            <a href="https://mse.hust.edu.cn/info/1143/1385.htm" target="_blank" rel="noopener">Profile</a>
+          </li>
+          <li>
+            <div class="gs-coauthor-info">
+              <strong>Longfei Zhou (周龙飞)</strong>
+              <span>Huazhong Univ. of Sci. &amp; Tech.</span>
+            </div>
+            <a href="https://orcid.org/0000-0002-7102-8552" target="_blank" rel="noopener">ORCID</a>
+          </li>
+          <li>
+            <div class="gs-coauthor-info">
+              <strong>Liang Gao (高亮)</strong>
+              <span>Professor, HUST</span>
+            </div>
+            <a href="https://orcid.org/0000-0001-6140-1668" target="_blank" rel="noopener">ORCID</a>
+          </li>
+          <li>
+            <div class="gs-coauthor-info">
+              <strong>Xinyu Li (李新宇)</strong>
+              <span>Professor, HUST</span>
+            </div>
+            <a href="https://english.hust.edu.cn/" target="_blank" rel="noopener">HUST</a>
+          </li>
+          <li>
+            <div class="gs-coauthor-info">
+              <strong>Xiaoyu Liu, Shijie Wang, Chentao Zhang</strong>
+              <span>School of MSE, HUST</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Citation / BibTeX Modal -->
+  <div id="gs-modal-backdrop" class="gs-modal-backdrop" onclick="if(event.target===this) closeCiteModal()">
+    <div class="gs-modal" role="dialog" aria-modal="true" aria-labelledby="gs-modal-title">
+      <div class="gs-modal-header">
+        <h4 id="gs-modal-title">Cite Article</h4>
+        <button class="gs-modal-close" onclick="closeCiteModal()" aria-label="Close">&times;</button>
+      </div>
+      <div class="gs-cite-style-row">
+        <div class="gs-cite-style-name">IEEE</div>
+        <div id="cite-ieee"></div>
+      </div>
+      <div class="gs-cite-style-row">
+        <div class="gs-cite-style-name">APA</div>
+        <div id="cite-apa"></div>
+      </div>
+      <div style="margin-top: 12px; font-weight: 600; font-size: 12.5px; color: #5f6368;">BibTeX Record</div>
+      <pre id="cite-bibtex" class="gs-bibtex-pre"></pre>
+      <div style="display: flex; justify-content: flex-end; gap: 10px;">
+        <button class="gs-btn gs-btn-primary" onclick="copyText('cite-bibtex', this)">Copy BibTeX</button>
+        <button class="gs-btn" onclick="closeCiteModal()">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const CITATIONS = {
+      case2026: {
+        ieee: 'Z. Hu, L. Zhou, and W. Shen, "A Dual-Arm Collaborative Framework for Robotic Manipulation with Active Observation," in Proc. IEEE 22nd Int. Conf. Automation Science and Engineering (CASE), 2026.',
+        apa: 'Hu, Z., Zhou, L., & Shen, W. (2026). A Dual-Arm Collaborative Framework for Robotic Manipulation with Active Observation. In Proceedings of the IEEE International Conference on Automation Science and Engineering (CASE).',
+        bibtex: `@inproceedings{hu2026dualarm,\n  author    = {Hu, Zhilun and Zhou, Longfei and Shen, Weiming},\n  title     = {A Dual-Arm Collaborative Framework for Robotic Manipulation with Active Observation},\n  booktitle = {Proceedings of the IEEE 22nd International Conference on Automation Science and Engineering (CASE)},\n  year      = {2026},\n  note      = {Session ThCT6.3}\n}`
+      },
+      vrloop2026: {
+        ieee: 'Z. Hu, X. Liu, S. Wang, C. Zhang, L. Zhou, X. Li, L. Gao, and W. Shen, "VR-Loop: Verify-Then-Refine Closed-Loop Reasoning for Deformable Rope Untangling," SSRN Electronic Journal, 2026, doi: 10.2139/ssrn.6401536.',
+        apa: 'Hu, Z., Liu, X., Wang, S., Zhang, C., Zhou, L., Li, X., Gao, L., & Shen, W. (2026). VR-Loop: Verify-Then-Refine Closed-Loop Reasoning for Deformable Rope Untangling. SSRN Electronic Journal. https://doi.org/10.2139/ssrn.6401536',
+        bibtex: `@article{hu2026vrloop,\n  author  = {Hu, Zhilun and Liu, Xiaoyu and Wang, Shijie and Zhang, Chentao and Zhou, Longfei and Li, Xinyu and Gao, Liang and Shen, Weiming},\n  title   = {VR-Loop: Verify-Then-Refine Closed-Loop Reasoning for Deformable Rope Untangling},\n  journal = {SSRN Electronic Journal},\n  year    = {2026},\n  doi     = {10.2139/ssrn.6401536}\n}`
+      },
+      visuotactile2026: {
+        ieee: 'Z. Hu and W. Shen, "Visuotactile Reinforcement Learning for Contact-Rich Manipulation," submitted to IEEE Transactions on Instrumentation and Measurement (TIM), 2026.',
+        apa: 'Hu, Z., & Shen, W. (2026). Visuotactile Reinforcement Learning for Contact-Rich Manipulation. Manuscript submitted for publication.',
+        bibtex: `@unpublished{hu2026visuotactile,\n  author = {Hu, Zhilun and Shen, Weiming},\n  title  = {Visuotactile Reinforcement Learning for Contact-Rich Manipulation},\n  note   = {Submitted to IEEE Transactions on Instrumentation and Measurement (TIM)},\n  year   = {2026}\n}`
+      },
+      helix2026: {
+        ieee: 'Z. Hu and W. Shen, "HELIX: Reflective Failure Recovery and Experience Memory for Long-Horizon Manipulation," submitted to Robotics and Computer-Integrated Manufacturing (RCIM), 2026.',
+        apa: 'Hu, Z., & Shen, W. (2026). HELIX: Reflective Failure Recovery and Experience Memory for Long-Horizon Manipulation. Manuscript submitted for publication.',
+        bibtex: `@unpublished{hu2026helix,\n  author = {Hu, Zhilun and Shen, Weiming},\n  title  = {HELIX: Reflective Failure Recovery and Experience Memory for Long-Horizon Manipulation},\n  note   = {Submitted to Robotics and Computer-Integrated Manufacturing (RCIM)},\n  year   = {2026}\n}`
+      }
+    };
+
+    function openCiteModal(key) {
+      const item = CITATIONS[key];
+      if (!item) return;
+      document.getElementById('cite-ieee').textContent = item.ieee;
+      document.getElementById('cite-apa').textContent = item.apa;
+      document.getElementById('cite-bibtex').textContent = item.bibtex;
+      document.getElementById('gs-modal-backdrop').classList.add('active');
+    }
+
+    function closeCiteModal() {
+      document.getElementById('gs-modal-backdrop').classList.remove('active');
+    }
+
+    function copyText(id, btn) {
+      const text = document.getElementById(id).textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        const old = btn.textContent;
+        btn.textContent = '✓ 已复制';
+        setTimeout(() => { btn.textContent = old; }, 1600);
+      });
+    }
+  </script>
+</body>
+</html>
