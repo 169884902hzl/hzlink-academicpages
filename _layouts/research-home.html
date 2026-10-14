@@ -1,15 +1,18 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ site.title }} (胡至伦) — Reliable Robotic Manipulation | HUST</title>
-  <meta name="description" content="Academic homepage of Zhilun Hu (胡至伦), Ph.D. student at Huazhong University of Science and Technology (HUST) advised by Prof. Weiming Shen, researching reliable robotic manipulation, active perception, VLM verification, visuotactile learning, and failure recovery.">
+  <meta name="description" content="Academic homepage of Zhilun Hu (胡至伦), Ph.D. Candidate at Huazhong University of Science and Technology (HUST) advised by Prof. Weiming Shen. Research in reliable robotic manipulation, active perception, VLM verification, visuotactile RL, and failure recovery.">
   <link rel="canonical" href="{{ '/' | absolute_url }}">
-  <meta property="og:title" content="Zhilun Hu (胡至伦) — Reliable Robotic Manipulation">
+  <meta property="og:title" content="Zhilun Hu (胡至伦) — Reliable Robotic Manipulation | HUST">
   <meta property="og:description" content="Research in active perception, dual-arm deformable manipulation, visuotactile policy learning, and failure recovery at HUST.">
   <meta property="og:type" content="website">
   <link rel="icon" href="{{ '/images/favicon.ico' | relative_url }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,600;0,6..72,700;1,6..72,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ '/assets/css/research-home.css' | relative_url }}">
   <script src="{{ '/assets/js/research-home.js' | relative_url }}" defer></script>
 </head>
@@ -17,230 +20,410 @@
 {% assign projects = site.portfolio | sort: 'order' %}
 {% assign featured_projects = projects | where: 'featured', true %}
 {% assign areas = projects | map: 'area' | compact | uniq %}
-<a class="skip" href="#main">Skip to main content</a>
+{% assign profile_data = site.data.profile %}
 
-<header class="topbar" role="banner">
-  <div class="topbar-inner">
-    <a class="brand" href="#main">
-      <span class="brand-name">Zhilun Hu</span>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- Floating Glassmorphic Navbar -->
+<header class="navbar" role="banner">
+  <div class="navbar-inner">
+    <a class="nav-brand" href="#main">
+      <span class="brand-dot" aria-hidden="true"></span>
+      <span class="brand-en">Zhilun Hu</span>
       <span class="brand-zh" lang="zh-CN">胡至伦</span>
-      <span class="brand-tag">HUST · Robotics</span>
+      <span class="brand-badge">HUST · Robotics</span>
     </a>
-    <nav class="topbar-nav" aria-label="Primary navigation">
+
+    <nav class="nav-links" aria-label="Primary navigation">
       <a href="#main">About</a>
-      <a href="#paradigm">Architecture</a>
+      <a href="#news">News</a>
       <a href="#selected">Publications</a>
       <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
       <a href="{{ '/cv/' | relative_url }}">CV</a>
-      <a href="https://github.com/169884902hzl" target="_blank" rel="noopener">GitHub ↗</a>
     </nav>
+
+    <div class="nav-actions">
+      <button type="button" id="theme-toggle" class="icon-btn" aria-label="Toggle dark or light theme" title="Switch Theme">
+        <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <a class="gh-pill" href="https://github.com/169884902hzl" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
+        <span>GitHub</span>
+      </a>
+    </div>
   </div>
 </header>
 
-<main id="main" class="page">
-  <section class="profile" aria-label="Scholar introduction">
-    <div class="profile-copy">
-      <div class="identity-head">
-        <h1>Zhilun Hu <span lang="zh-CN">胡至伦</span></h1>
-        <p class="affiliation">
-          <strong>Ph.D. Student in Mechanical Engineering (Robotics &amp; Embodied AI)</strong><br>
-          School of Mechanical Science and Engineering, <a href="https://english.hust.edu.cn/" target="_blank" rel="noopener">Huazhong University of Science and Technology (HUST)</a>
-        </p>
+<main id="main" class="container">
+  <!-- 1. Hero Scholar Bento Section -->
+  <section class="hero-card" aria-label="Scholar profile">
+    <div class="hero-content">
+      <div class="status-pill">
+        <span class="pulse-dot"></span>
+        <span>Robotics &amp; Embodied AI · Huazhong University of Science and Technology</span>
       </div>
 
-      <p class="bio-en">
-        I am a Ph.D. student at Huazhong University of Science and Technology (HUST), advised by <a href="https://mse.hust.edu.cn/info/1143/1385.htm" target="_blank" rel="noopener"><strong>Prof. Weiming Shen</strong></a> (IEEE Fellow, Academician of CAE). My research centers on <strong>reliable robotic manipulation</strong>—investigating how physical agents actively acquire unoccluded observations, verify high-level action proposals against geometric constraints prior to execution, adapt policies through visuotactile interaction, and recover from execution anomalies.
+      <h1 class="hero-title">
+        Zhilun Hu <span class="hero-zh" lang="zh-CN">胡至伦</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        <strong>Ph.D. Candidate in Mechanical Engineering</strong> · School of Mechanical Science and Engineering, <a href="https://english.hust.edu.cn/" target="_blank" rel="noopener">HUST</a><br>
+        Advised by <a href="https://mse.hust.edu.cn/info/1143/1385.htm" target="_blank" rel="noopener"><strong>Prof. Weiming Shen</strong></a> <span class="cred-tag">IEEE Fellow · CAE Academician</span>
       </p>
 
-      <p class="bio-zh" lang="zh-CN">
-        我是华中科技大学机械科学与工程学院博士研究生，师从<a href="https://mse.hust.edu.cn/info/1143/1385.htm" target="_blank" rel="noopener">沈卫明教授</a>。我的研究致力于解决<strong>机器人操作中的可靠性问题（Reliable Robotic Manipulation）</strong>，构建从<strong>主动视觉伺服感知</strong>、<strong>双臂柔性操作先验视觉校验</strong>、<strong>视触觉强化学习策略自适应</strong>到<strong>故障恢复与经验记忆</strong>的完整闭环架构。
+      <p class="hero-bio">
+        My research focuses on <strong>Reliable Robotic Manipulation</strong>—investigating how physical agents actively acquire unoccluded visual observations, pre-verify high-level action proposals against geometric constraints, adapt contact-rich policies through visuotactile reinforcement learning, and recover from execution anomalies.
       </p>
 
-      <div class="profile-links" role="navigation" aria-label="Academic resources">
-        <a class="btn-primary" href="#selected">Selected Papers</a>
-        <a class="btn-secondary" href="#projects">All Projects ({{ projects.size }})</a>
-        <a class="btn-secondary" href="{{ '/cv/' | relative_url }}">Curriculum Vitae</a>
-        <a class="btn-secondary" href="{{ '/publications/' | relative_url }}">Publications Archive</a>
-        <a class="btn-secondary" href="https://github.com/169884902hzl" target="_blank" rel="noopener">GitHub (@169884902hzl)</a>
+      <div class="hero-bio-zh" lang="zh-CN">
+        <strong>研究主线：</strong>华中科技大学机械科学与工程学院博士研究生，师从沈卫明教授。致力于解决<strong>机器人操作中的物理可靠性问题</strong>，构建从<strong>主动视觉伺服感知</strong>、<strong>双臂柔性操作先验视觉校验</strong>、<strong>视触觉强化学习策略自适应</strong>到<strong>反射式故障恢复与情景经验记忆</strong>的闭环智能体架构。
+      </div>
+
+      <div class="interest-tags" aria-label="Research keywords">
+        <span class="tag-chip">Active Perception &amp; Visual Servoing</span>
+        <span class="tag-chip">Vision-Language Manipulation</span>
+        <span class="tag-chip">Visuotactile RL Adaptation</span>
+        <span class="tag-chip">Failure Recovery &amp; Memory</span>
+      </div>
+
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#selected">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          <span>Selected Publications</span>
+        </a>
+        <a class="btn btn-outline" href="#projects">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+          <span>Research Projects ({{ projects.size }})</span>
+        </a>
+        <a class="btn btn-outline" href="{{ '/cv/' | relative_url }}">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          <span>Curriculum Vitae</span>
+        </a>
+        <a class="btn btn-outline" href="{{ '/publications/' | relative_url }}">
+          <span>All Publications →</span>
+        </a>
       </div>
     </div>
 
-    <figure class="portrait">
-      {% if page.portrait %}
-      <img src="{{ page.portrait | relative_url }}" alt="Portrait of Zhilun Hu" width="230" height="270" class="zoomable-media">
-      {% else %}
-      <img src="{{ '/images/projects/portrait-emblem.svg' | relative_url }}" alt="Zhilun Hu — SE(3) Robotic Manipulation Research Emblem" width="230" height="270" class="emblem-img zoomable-media">
-      {% endif %}
+    <figure class="hero-visual">
+      <div class="visual-frame">
+        {% if page.portrait %}
+        <img src="{{ page.portrait | relative_url }}" alt="Portrait of Zhilun Hu" class="zoomable-media">
+        {% else %}
+        <img src="{{ '/images/renders/hero-robotics.png' | relative_url }}" alt="3D Dual-Arm Robotic Manipulation Visualization — Zhilun Hu @ HUST" class="zoomable-media">
+        {% endif %}
+      </div>
     </figure>
   </section>
 
-  <section id="paradigm" class="paradigm-section" aria-labelledby="paradigm-title">
-    <div class="section-heading">
+  <!-- 2. News & Updates Timeline Section -->
+  <section id="news" class="section-block" aria-labelledby="news-title">
+    <div class="section-header">
       <div>
-        <span class="eyebrow">Research Architecture</span>
-        <h2 id="paradigm-title">Closed-Loop Reliable Manipulation Paradigm</h2>
+        <span class="section-eyebrow">Latest Updates</span>
+        <h2 id="news-title">News &amp; Highlights</h2>
       </div>
-      <span class="section-note">Click any pillar to filter projects below</span>
+      <span class="section-sub">Academic milestones &amp; research releases</span>
     </div>
-    <div class="paradigm-grid">
-      <button type="button" class="paradigm-card" data-target-area="Active perception">
-        <span class="pillar-index">01 · PERCEPTION</span>
-        <strong>Active Observation</strong>
-        <p>Two-stage viewpoint planning &amp; target–gripper relative visual servoing under occlusion.</p>
-      </button>
-      <button type="button" class="paradigm-card" data-target-area="Dual-arm manipulation">
-        <span class="pillar-index">02 · VERIFICATION</span>
-        <strong>Pre-Execution Critique</strong>
-        <p>Iterative VLM visual-overlay verification &amp; mask constraints for deformable objects.</p>
-      </button>
-      <button type="button" class="paradigm-card" data-target-area="Visuotactile learning">
-        <span class="pillar-index">03 · ADAPTATION</span>
-        <strong>Visuotactile RL Policy</strong>
-        <p>Cross-modal vision and tactile force-field fusion for contact-rich insertion tasks.</p>
-      </button>
-      <button type="button" class="paradigm-card" data-target-area="Failure recovery">
-        <span class="pillar-index">04 · RECOVERY</span>
-        <strong>Reflex &amp; Memory Loop</strong>
-        <p>Online value assessment, reflexive safe retraction &amp; episodic experience memory.</p>
-      </button>
+
+    <div class="news-card">
+      <ul class="news-timeline">
+        {% for item in profile_data.news %}
+        <li class="news-item">
+          <div class="news-meta">
+            <span class="news-date">{{ item.date }}</span>
+            <span class="news-badge badge-tone-{{ item.badge_color }}">{{ item.badge }}</span>
+            {% if item.is_new %}<span class="news-hot">NEW</span>{% endif %}
+          </div>
+          <div class="news-body">
+            <p class="news-en">{{ item.text_en }}</p>
+            {% if item.text_zh %}<p class="news-zh" lang="zh-CN">{{ item.text_zh }}</p>{% endif %}
+          </div>
+        </li>
+        {% endfor %}
+      </ul>
     </div>
   </section>
 
+  <!-- 3. Selected Publications (AcadHomepage Ribbon Badge + 3D Studio Render Card) -->
   {% if featured_projects.size > 0 %}
-  <section id="selected" aria-labelledby="selected-title">
-    <div class="section-heading">
+  <section id="selected" class="section-block" aria-labelledby="selected-title">
+    <div class="section-header">
       <div>
-        <span class="eyebrow">Representative Work</span>
+        <span class="section-eyebrow">Representative Work</span>
         <h2 id="selected-title">Selected Publications &amp; Preprints</h2>
       </div>
-      <a class="section-link" href="{{ '/publications/' | relative_url }}">Full publication page →</a>
+      <a class="section-more" href="{{ '/publications/' | relative_url }}">Full publications archive →</a>
     </div>
 
-    <div class="publication-list">
-    {% for project in featured_projects %}
-      <article class="publication">
-        <figure class="research-media">
-          {% if project.video %}
-          <video controls playsinline preload="metadata"{% if project.image %} poster="{{ project.image | relative_url }}"{% endif %} aria-label="{{ project.title | escape }} — experiment video">
-            <source src="{{ project.video | relative_url }}">
-            <a href="{{ project.video | relative_url }}">Download experiment video</a>
-          </video>
-          {% else %}
-          <img src="{{ project.image | default: '/images/project-placeholder.svg' | relative_url }}" alt="{{ project.image_alt | default: project.title | escape }}" class="zoomable-media">
-          {% endif %}
-          {% if project.media_caption %}<figcaption>{{ project.media_caption | escape }}</figcaption>{% endif %}
-        </figure>
+    <div class="pub-stack">
+      {% for project in featured_projects %}
+      <article class="pub-card">
+        <div class="pub-media-col">
+          <figure class="pub-media-frame">
+            <!-- Top-left Conference / Venue Ribbon Badge -->
+            <span class="venue-ribbon ribbon-{{ project.ribbon_color | default: 'emerald' }}">
+              {{ project.ribbon | default: project.status | escape }}
+            </span>
 
-        <div class="publication-text">
-          <div class="pub-badges">
-            <span class="badge badge-{{ project.badge_type | default: 'accepted' }}">{{ project.status | escape }}</span>
-            {% if project.role %}<span class="badge badge-role">{{ project.role | escape }}</span>{% endif %}
-            {% if project.area %}<span class="badge badge-area">{{ project.area | escape }}</span>{% endif %}
+            {% if project.video %}
+            <video controls playsinline preload="metadata"{% if project.image %} poster="{{ project.image | relative_url }}"{% endif %}>
+              <source src="{{ project.video | relative_url }}">
+            </video>
+            {% else %}
+            <img
+              src="{{ project.image | default: '/images/renders/active-observation.png' | relative_url }}"
+              data-render-src="{{ project.image | relative_url }}"
+              {% if project.diagram %}data-diagram-src="{{ project.diagram | relative_url }}"{% endif %}
+              alt="{{ project.image_alt | default: project.title | escape }}"
+              class="pub-preview-img zoomable-media"
+            >
+            {% endif %}
+          </figure>
+
+          {% if project.diagram %}
+          <div class="media-switcher" role="group" aria-label="Switch between 3D render and method diagram">
+            <button type="button" class="ms-btn active" data-mode="render">3D Studio View</button>
+            <button type="button" class="ms-btn" data-mode="diagram">Method Diagram</button>
+          </div>
+          {% endif %}
+        </div>
+
+        <div class="pub-info-col">
+          <div class="pub-meta-row">
+            <span class="status-tag status-{{ project.badge_type | default: 'accepted' }}">{{ project.status | escape }}</span>
+            {% if project.role %}<span class="role-tag">{{ project.role | escape }}</span>{% endif %}
+            {% if project.area %}<span class="area-tag">{{ project.area | escape }}</span>{% endif %}
           </div>
 
-          <h3><a href="{{ project.url | relative_url }}">{{ project.paper_title | default: project.title | escape }}</a></h3>
+          <h3 class="pub-title">
+            <a href="{{ project.url | relative_url }}">{{ project.paper_title | default: project.title | escape }}</a>
+          </h3>
 
           {% if project.authors %}
-          <p class="authors">{{ project.authors | escape | replace: 'Zhilun Hu', '<strong class="me">Zhilun Hu</strong>' }}</p>
+          <p class="pub-authors">{{ project.authors | escape | replace: 'Zhilun Hu', '<strong class="author-me">Zhilun Hu</strong>' }}</p>
           {% endif %}
 
           {% if project.venue %}
-          <p class="venue">{{ project.venue | escape }}</p>
+          <p class="pub-venue">{{ project.venue | escape }}</p>
           {% endif %}
 
-          <p class="abstract">{{ project.home_description | default: project.contribution | default: project.summary | escape }}</p>
+          {% if project.tldr %}
+          <div class="pub-tldr">
+            <strong>TL;DR:</strong> {{ project.tldr | escape }}
+          </div>
+          {% endif %}
 
-          <div class="resource-links">
-            <a class="res-btn res-btn-primary" href="{{ project.url | relative_url }}">Project Page</a>
-            {% for resource in project.links %}
-            <a class="res-btn" href="{{ resource.url | relative_url }}"{% if resource.url contains 'http' %} target="_blank" rel="noopener"{% endif %}>{{ resource.label | escape }}</a>
+          <p class="pub-abstract">{{ project.home_description | default: project.contribution | default: project.summary | escape }}</p>
+
+          {% if project.tags %}
+          <div class="card-tags">
+            {% for tag in project.tags %}
+            <span class="mini-tag">{{ tag | escape }}</span>
             {% endfor %}
+          </div>
+          {% endif %}
+
+          <div class="pub-actions">
+            <a class="action-btn action-btn-solid" href="{{ project.url | relative_url }}">Project Page</a>
+            {% for resource in project.links %}
+            <a class="action-btn" href="{{ resource.url | relative_url }}"{% if resource.url contains 'http' %} target="_blank" rel="noopener"{% endif %}>{{ resource.label | escape }} ↗</a>
+            {% endfor %}
+            {% if project.diagram %}
+            <button type="button" class="action-btn diagram-lightbox-btn" data-diagram="{{ project.diagram | relative_url }}" data-caption="{{ project.paper_title | default: project.title | escape }} — System Architecture">Architecture Diagram</button>
+            {% endif %}
             {% if project.bibtex %}
-            <button type="button" class="res-btn bibtex-toggle" aria-expanded="false">BibTeX</button>
+            <button type="button" class="action-btn bibtex-toggle" aria-expanded="false">BibTeX</button>
             {% endif %}
           </div>
 
           {% if project.bibtex %}
           <div class="bibtex-drawer" hidden>
-            <div class="bibtex-header">
+            <div class="bibtex-bar">
               <span>BibTeX Citation</span>
-              <button type="button" class="bibtex-copy">Copy</button>
+              <button type="button" class="bibtex-copy">Copy BibTeX</button>
             </div>
             <pre><code>{{ project.bibtex | escape }}</code></pre>
           </div>
           {% endif %}
         </div>
       </article>
-    {% endfor %}
+      {% endfor %}
     </div>
   </section>
   {% endif %}
 
-  <section id="projects" aria-labelledby="projects-title">
-    <div class="section-heading">
+  <!-- 4. Research Projects & Ongoing Thrusts (Bento Gallery + Search & Filter + View Switch) -->
+  <section id="projects" class="section-block" aria-labelledby="projects-title">
+    <div class="section-header">
       <div>
-        <span class="eyebrow">Portfolio &amp; Ongoing Research</span>
-        <h2 id="projects-title">Research Projects &amp; Thrusts</h2>
+        <span class="section-eyebrow">Research Portfolio</span>
+        <h2 id="projects-title">Research Projects &amp; Ongoing Thrusts</h2>
       </div>
-      <div class="projects-Meta-controls">
+      <div class="projects-toolbar-right">
         <span id="project-count" role="status" aria-live="polite">{{ projects.size }} projects</span>
-        <div class="view-switch" role="group" aria-label="Toggle project layout view">
-          <button type="button" class="view-btn" data-view="detailed" aria-pressed="true">Media View</button>
-          <button type="button" class="view-btn" data-view="compact" aria-pressed="false">Compact List</button>
+        <div class="view-switch" role="group" aria-label="Toggle project view">
+          <button type="button" class="view-btn" data-view="detailed" aria-pressed="true">Gallery Cards</button>
+          <button type="button" class="view-btn" data-view="compact" aria-pressed="false">Compact Table</button>
         </div>
       </div>
     </div>
 
-    <div class="filters" role="group" aria-label="Filter projects by research area" hidden>
-      <button type="button" data-filter="all" aria-pressed="true">All ({{ projects.size }})</button>
-      {% for area in areas %}
-      <button type="button" data-filter="{{ area | escape }}" aria-pressed="false">{{ area | escape }}</button>
-      {% endfor %}
+    <div class="filter-bar">
+      <div class="filters" role="group" aria-label="Filter projects by research area" hidden>
+        <button type="button" data-filter="all" aria-pressed="true">All ({{ projects.size }})</button>
+        {% for area in areas %}
+        <button type="button" data-filter="{{ area | escape }}" aria-pressed="false">{{ area | escape }}</button>
+        {% endfor %}
+      </div>
+      <div class="search-box">
+        <input type="search" id="project-search" placeholder="Filter by keyword or method..." aria-label="Search projects by keyword">
+      </div>
     </div>
 
-    <div id="project-list" class="project-list-detailed">
-    {% for project in projects %}
-      <article class="project-entry" data-area="{{ project.area | escape }}">
-        <figure class="project-thumb">
+    <div id="project-list" class="projects-grid">
+      {% for project in projects %}
+      <article class="project-entry" data-area="{{ project.area | escape }}" data-search="{{ project.title | escape }} {{ project.summary | escape }} {{ project.contribution | escape }} {{ project.area | escape }}">
+        <figure class="proj-card-media">
+          <span class="venue-ribbon ribbon-{{ project.ribbon_color | default: 'indigo' }}">
+            {{ project.ribbon | default: project.short_title | escape }}
+          </span>
           <a href="{{ project.url | relative_url }}" tabindex="-1" aria-hidden="true">
-            <img src="{{ project.image | default: '/images/project-placeholder.svg' | relative_url }}" alt="{{ project.image_alt | default: project.title | escape }}">
+            <img src="{{ project.image | default: '/images/renders/active-observation.png' | relative_url }}" alt="{{ project.image_alt | default: project.title | escape }}">
           </a>
         </figure>
-        <div class="project-body">
-          <div class="project-top">
-            <span class="project-area-tag">{{ project.area | escape }}</span>
-            <span class="project-status-tag">{{ project.status | escape }}</span>
+
+        <div class="proj-card-body">
+          <div class="proj-card-meta">
+            <span class="proj-area">{{ project.area | escape }}</span>
+            <span class="proj-status">{{ project.status | escape }}</span>
           </div>
-          <h3><a href="{{ project.url | relative_url }}">{{ project.title | escape }}</a></h3>
-          <p class="project-summary">{{ project.summary | default: project.excerpt | strip_html | escape }}</p>
+
+          <h3 class="proj-title">
+            <a href="{{ project.url | relative_url }}">{{ project.title | escape }}</a>
+          </h3>
+
+          <p class="proj-summary">{{ project.summary | default: project.excerpt | strip_html | escape }}</p>
+
           {% if project.contribution %}
-          <p class="project-contrib"><strong>Key Mechanism:</strong> {{ project.contribution | escape }}</p>
+          <p class="proj-mechanism"><strong>Mechanism:</strong> {{ project.contribution | escape }}</p>
           {% endif %}
-          <div class="project-links">
-            <a href="{{ project.url | relative_url }}">Project overview &amp; architecture →</a>
+
+          {% if project.tags %}
+          <div class="card-tags">
+            {% for tag in project.tags %}
+            <span class="mini-tag">{{ tag | escape }}</span>
+            {% endfor %}
+          </div>
+          {% endif %}
+
+          <div class="proj-card-footer">
+            <a class="proj-link" href="{{ project.url | relative_url }}">Explore Project &amp; Details →</a>
+            {% if project.diagram %}
+            <button type="button" class="proj-diag-btn diagram-lightbox-btn" data-diagram="{{ project.diagram | relative_url }}" data-caption="{{ project.title | escape }} — Technical Architecture">Diagram</button>
+            {% endif %}
           </div>
         </div>
       </article>
-    {% endfor %}
+      {% endfor %}
+    </div>
+  </section>
+
+  <!-- 5. Education, Research Architecture & Technical Stack Section -->
+  <section id="experience" class="section-block" aria-labelledby="exp-title">
+    <div class="section-header">
+      <div>
+        <span class="section-eyebrow">Academic Background &amp; Methodology</span>
+        <h2 id="exp-title">Education &amp; Research Architecture</h2>
+      </div>
+    </div>
+
+    <div class="bento-two-col">
+      <!-- Left Column: Education & Affiliation + Technical Stack -->
+      <div class="bento-panel">
+        <h3 class="panel-heading">Education &amp; Academic Affiliation</h3>
+        {% for edu in profile_data.education %}
+        <div class="edu-block">
+          <div class="edu-header">
+            <span class="edu-badge">{{ edu.period }}</span>
+            <strong>{{ edu.degree_en }}</strong>
+          </div>
+          <p class="edu-inst">{{ edu.institution_en }}</p>
+          <p class="edu-inst-zh" lang="zh-CN">{{ edu.institution_zh }} · {{ edu.degree_zh }}</p>
+          <p class="edu-advisor">{{ edu.advisor_en }}</p>
+          <p class="edu-advisor-zh" lang="zh-CN">{{ edu.advisor_zh }}</p>
+          <p class="edu-focus"><strong>Research Scope:</strong> {{ edu.focus_en }}</p>
+        </div>
+        {% endfor %}
+
+        <h3 class="panel-heading" style="margin-top: 26px;">Robotics Hardware &amp; Software Stack</h3>
+        <div class="stack-groups">
+          <div class="stack-row">
+            <span class="stack-label">Robot Platforms</span>
+            <div class="card-tags">
+              <span class="mini-tag">Dual-Arm Manipulators</span>
+              <span class="mini-tag">Piper Robot</span>
+              <span class="mini-tag">Eye-in-Hand RGB-D</span>
+              <span class="mini-tag">Optical-Tactile Sensors</span>
+            </div>
+          </div>
+          <div class="stack-row">
+            <span class="stack-label">Control &amp; Learning</span>
+            <div class="card-tags">
+              <span class="mini-tag">IBVS / PBVS Visual Servoing</span>
+              <span class="mini-tag">Vision-Language Agents (VLM)</span>
+              <span class="mini-tag">Reinforcement Learning</span>
+              <span class="mini-tag">Episodic Memory Recovery</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Closed-Loop Manipulation Pillars -->
+      <div class="bento-panel">
+        <h3 class="panel-heading">Closed-Loop Reliable Manipulation Pillars</h3>
+        <p class="panel-sub">Click any research pillar below to filter corresponding projects:</p>
+        <div class="pillars-list">
+          {% for pillar in profile_data.pillars %}
+          <button type="button" class="pillar-item" data-target-area="{{ pillar.area | escape }}">
+            <div class="pillar-num">{{ pillar.id }}</div>
+            <div class="pillar-content">
+              <div class="pillar-top">
+                <strong>{{ pillar.title }}</strong>
+                <span lang="zh-CN">{{ pillar.title_zh }}</span>
+              </div>
+              <p>{{ pillar.desc }}</p>
+            </div>
+          </button>
+          {% endfor %}
+        </div>
+      </div>
     </div>
   </section>
 
   <footer class="site-footer">
     <div class="footer-inner">
-      <p><strong>Zhilun Hu (胡至伦)</strong> · School of Mechanical Science and Engineering, Huazhong University of Science and Technology (HUST)</p>
-      <p class="footer-links">
-        <a href="#main">Back to top ↑</a> ·
-        <a href="{{ '/publications/' | relative_url }}">Publications</a> ·
-        <a href="{{ '/portfolio/' | relative_url }}">Projects</a> ·
-        <a href="{{ '/cv/' | relative_url }}">CV</a> ·
+      <div>
+        <strong>Zhilun Hu (胡至伦)</strong> · School of Mechanical Science and Engineering, Huazhong University of Science and Technology (HUST)
+      </div>
+      <div class="footer-links">
+        <a href="#main">Top ↑</a>
+        <a href="#news">News</a>
+        <a href="#selected">Publications</a>
+        <a href="#projects">Projects</a>
+        <a href="{{ '/cv/' | relative_url }}">CV</a>
         <a href="https://github.com/169884902hzl" target="_blank" rel="noopener">GitHub</a>
-      </p>
+      </div>
     </div>
   </footer>
 </main>
 
-<div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged diagram view" hidden>
-  <button type="button" class="lightbox-close" aria-label="Close diagram preview">× Close</button>
+<!-- Fullscreen Lightbox for 3D Renders & Architecture Diagrams -->
+<div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged visual preview" hidden>
+  <button type="button" class="lightbox-close" aria-label="Close preview">× Close</button>
   <img id="lightbox-img" src="" alt="">
   <p id="lightbox-caption"></p>
 </div>

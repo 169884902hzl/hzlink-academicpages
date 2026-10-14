@@ -6,20 +6,28 @@ permalink: /portfolio/visuotactile-adaptation/
 order: 3
 short_title: "T-Rex / Sticks"
 area: "Visuotactile learning"
-status: "Ongoing research"
+status: "Ongoing Research"
+ribbon: "Visuotactile RL"
+ribbon_color: "indigo"
 badge_type: "ongoing"
 featured: false
-role: "Lead researcher"
-image: /images/projects/visuotactile-adaptation.svg
-image_alt: "Visuotactile Policy Adaptation and Reinforcement Learning on Piper Robot"
+role: "Lead Researcher"
+image: /images/renders/visuotactile.png
+diagram: /images/projects/visuotactile-adaptation.svg
+image_alt: "3D macro visualization of visuotactile optical-tactile gripper performing precision peg-in-hole insertion"
 media_caption: "Cross-modal vision and tactile force-field fusion for contact-rich insertion and policy adaptation."
 summary: "Adapting contact-rich manipulation policies via vision, tactile force fields, and reinforcement learning on a Piper robot platform."
 contribution: "Visuotactile sensorimotor fusion + reinforcement learning policy adaptation + continuous action-data coupling on Piper hardware."
+tags:
+  - "Visuotactile Sensing"
+  - "Reinforcement Learning"
+  - "Contact-Rich Insertion"
+  - "Piper Robot"
 header:
-  teaser: projects/visuotactile-adaptation.svg
+  teaser: renders/visuotactile.png
 ---
 
-![Visuotactile Policy Adaptation Architecture]({{ '/images/projects/visuotactile-adaptation.svg' | relative_url }})
+![Visuotactile Policy Adaptation 3D Visualization]({{ '/images/renders/visuotactile.png' | relative_url }})
 
 **Ongoing Research · Visuotactile Learning & Contact-Rich Control**
 
@@ -27,7 +35,9 @@ header:
 
 In contact-rich manipulation tasks such as tight-tolerance insertion (**Sticks** task), visual observations alone cannot resolve sub-millimeter alignment errors or contact forces once parts engage. Building upon the open-source **T-Rex** framework, this research investigates how multimodal visual and tactile feedback can drive adaptive reinforcement learning policies on a **Piper** robot platform.
 
-## Technical Focus
+## Technical Architecture
+
+![Visuotactile Policy Adaptation Architecture]({{ '/images/projects/visuotactile-adaptation.svg' | relative_url }})
 
 - **Visuotactile Sensorimotor Fusion**: Coupling global visual context ($\mathbf{o}_t^{\text{vis}}$) with local tactile shear and normal force fields ($\mathbf{o}_t^{\text{tac}}$) to infer contact states and geometric misalignment.
 - **Policy Adaptation via Reinforcement Learning**: Training and adapting continuous manipulation policies to compensate for contact uncertainties during physical interaction.
